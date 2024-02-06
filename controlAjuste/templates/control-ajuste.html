@@ -1,0 +1,279 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container__controlajuste">
+  <div class="container__controlajuste__administrador">
+    <div class="container__controlajuste__administrador-wrapper">
+      <div class="container__controlajuste__administrador__title">
+        <h1>Control de ajustes</h1>
+        <div class="container__controlajuste__administrador__title__box"><a href="{% url 'listar_servicio' %}">Servicios<img
+              class="staff" src="{% static '/Images/Icons/servicio.svg' %}" alt="ajustes de servicio" /></a></div>
+        <div class="container__controlajuste__administrador__title__box"><a href="{% url 'listar_staff' %}">Staff<img
+              class="staff" src="{% static '/Images/Icons/staff.svg' %}" alt="ajustes de staff" /></a></div>
+      </div>
+      <div class="container__controlajuste__administrador__title">
+        <h2>Control de servicios</h2>
+      </div>
+
+      <!------modal para crear servicios------->
+      <button class="btn btn-secondary newBtnElement" type="button" data-bs-toggle="modal"
+        data-bs-target="#modalNvoServicio">Nuevo</button><br><br>
+      <div class="modal-nuevo-servicio">
+        <div class="modal" id="modalNvoServicio" aria-hidden="true" aria-labelledby="modalNvoServicioLabel"
+          tabindex="-1">
+          <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title" id="modalNvoServicioLabel">Añadir nuevo <strong>Servicio</strong></h2>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div id="mensajeExito" class="alert alert-success" style="display: none;">
+                  Datos enviados con éxito!
+                </div>
+              </div>
+              <div class="modal-body">
+                <div class="content-form">
+                  <form method="POST" action="{% url 'create_servicio' %}">
+                    {% csrf_token %}
+                    <div class="form-floating mb-3">
+                      <input class="form-control form-control-lg" placeholder="Nombre del servicio" type="text"
+                        name="nombre_servicio" id="nombre_servicio" />
+                      <label class="form-label" for="nombre_servicio">Nombre del servicio</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input class="form-control form-control-lg" placeholder="Descripcion" type="text"
+                        name="descripcion" maxlength="600" id="descripcion" />
+                      <label class="form-label" for="descripcion">Descripcion</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input class="form-control form-control-lg" placeholder="Costo servicio" type="text" name="costo"
+                        required="required" />
+                      <label class="form-label" for="costo">Costo del servicio</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input class="form-control form-control-lg" placeholder="Plan" type="text" name="plan"
+                        maxlength="20" id="plan" />
+                      <label for="plan">Plan</label>
+                    </div>
+                </div>
+
+                <div class="modal-body__buttons">
+                  <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                  <button class="btn btn-success" data-bs-target="#modalServicio" data-bs-toggle="modal"
+                    data-bs-dismiss="modal">Guardar</button>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="modalServicio" aria-hidden="true" aria-labelledby="modalServicio" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="modalServicio">Nuevo Servicio </h3>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">Servicio agregado!</div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Aceptar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!------------------tabla------------------>
+      <div class="container__controlajuste__administrador__table">
+        <table class="display" id="myTable" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Descripcion</th>
+              <th>Costo</th>
+              <th>Detalles</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for servicio in servicios %}
+            <tr id="fila_id_{{servicio.id_servicio}}">
+              <td> {{ servicio.id_servicio}} </td>
+              <td> {{ servicio.nombre_servicio}} </td>
+              <td> {{ servicio.descripcion}} </td>
+              <td> {{ servicio.costo}} </td>
+              <td> <a href="{% url 'editar_servicio' servicio.id_servicio %}" data-bs-toggle="modal"
+                  data-id="{{ servicio.id_servicio }}" data-bs-target="#modalEditarServicio" title="Modificar">
+                  <button class="btn btn-link newBtnElement" type="button">Ver mas ...</button></a></td>
+              <td><a href="{% url 'editar_servicio' servicio.id_servicio %}" data-bs-toggle="modal"
+                  data-id="{{ servicio.id_servicio }}" data-bs-target="#modalEditarServicio" title="Modificar"> <i
+                    class="bi bi-pencil-square"></i></a>
+                <a href="{% url 'eliminar_servicio' servicio.id_servicio %}" data-bs-toggle="modal"
+                  data-bs-target="#modalEliminarServicio" data-id="{{ servicio.id_servicio }}" title="Eliminar"> <i
+                    class="bi bi-trash3-fill"></i></a></td>
+            </tr>
+            {% endfor %}
+            <!---modal para modificar-->
+            <div class="modal-modificar-servicio">
+              <div class="modal" id="modalEditarServicio" aria-hidden="true" aria-labelledby="modalEditarServicioLabel"
+                tabindex="-1">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h2 class="modal-title" id="modalEditarServicioLabel">Modificar <strong>Servicio</strong></h2>
+                      <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="content-form">
+                        <form action="#" id="editarServicioForm" method="POST">
+                          {% csrf_token %}
+                          <div class="form-floating mb-3">
+                            <input class="form-control form-control-lg" placeholder="Nombre del servicio" type="text"
+                              name="nombre_servicio" id="nombre_servicio2" />
+                            <label class="form-label" for="nombre_servicio2">Nombre del servicio</label>
+                          </div>
+                          <div class="form-floating mb-3">
+                            <input class="form-control form-control-lg" placeholder="Descripcion" type="text"
+                              name="descripcion" maxlength="600" id="descripcion2" />
+                            <label class="form-label" for="descripcion2">Descripcion</label>
+                          </div>
+                          <div class="form-floating mb-3">
+                            <input class="form-control form-control-lg" placeholder="Costo servicio" type="text"
+                              name="costo" id="costo2" />
+                            <label class="form-label" for="costo2">Costo del servicio</label>
+                          </div>
+                          <div class="form-floating mb-3">
+                            <input class="form-control form-control-lg" placeholder="Plan" type="text" name="plan"
+                              maxlength="20" id="plan2" />
+                            <label for="plan2">Plan</label>
+                          </div>
+                      </div>
+
+                      <div class="modal-body__buttons">
+                        <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                        <button class="btn btn-success" data-bs-target="#modalServicio" data-bs-toggle="modal"
+                          data-bs-dismiss="modal">Guardar</button>
+                      </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="modalServicioModificado" aria-hidden="true"
+                aria-labelledby="modalServicioModificado" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="modalServicioModificado">Modificar Servicio </h3>
+                      <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">Servicio modificado!</div>
+                    <div class="modal-footer">
+                      <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Aceptar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="modalEliminarServicio" aria-hidden="true" aria-labelledby="modalEliminarLabel"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalEliminarModalLabel">Eliminar</h5>
+                  <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">¿Estas seguro que desdeas eliminar?</div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" data-bs-target="#modalEliminar" data-bs-toggle="modal"
+                    data-bs-dismiss="modal">Cancelar </button>
+                  <button id="confirmarEliminar" class="btn btn-secondary" type="button"
+                    data-bs-dismiss="modal">Aceptar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          </tbody>
+          <script>
+            $(document).ready(function () {
+              $('#myTable').DataTable();
+            });
+            $('a[data-bs-toggle="modal"]').on('click', function () {
+              var targetModalId = $(this).data('bs-target');
+              var id_servicio = $(this).data('id');
+    
+              if (targetModalId === '#modalEliminarServicio') {
+                $('#confirmarEliminar').data('id', id_servicio);
+              } else {
+                $.ajax({
+                  url: '{% url "editar_servicio" id_servicio=0 %}'.replace('0', id_servicio),
+                  type: 'GET',
+                  data: {
+                    'id_servicio': id_servicio
+                  },
+                  success: function (data) {
+                    $('#editarServicioForm').attr('action', '{% url "editar_servicio" id_servicio=0 %}'.replace('0',
+                      id_servicio));
+                    $('#nombre_servicio2').val(data.nombre_servicio);
+                    $('#descripcion2').val(data.descripcion);
+                    $('#costo2').val(data.costo);
+                    $('#plan2').val(data.plan);
+                  },
+                  error: function (xhr, status, error) {
+                    console.error('Error al cargar la información del registro:', error);
+                    alert('Error al cargar la información del registro.');
+                  }
+                });
+              }
+            });
+    
+            $('#confirmarEliminar').on('click', function () {
+              var id_servicio = $(this).data('id');
+    
+              if (id_servicio !== undefined) {
+                $.ajax({
+                  url: '{% url "eliminar_servicio" id_servicio=0 %}'.replace('0', id_servicio),
+                  type: 'POST',
+                  dataType: 'json',
+                  data: {
+                    'id_servicio': id_servicio
+                  },
+                  success: function (response) {
+                    console.log('Respuesta del servidor:', response);
+                    alert('Registro eliminado correctamente');
+                    // Cerrar el modal después de la eliminación
+                    $('#modalEliminarServicio').modal('hide');
+                    // Eliminar la fila correspondiente de la tabla
+                    var table = $('#myTable').DataTable();
+                    table.row('#fila_id_' + id_servicio).remove().draw();
+                  },
+                  error: function (xhr, status, error) {
+                    console.error('Error al eliminar el registro:', error);
+                    alert('Error al eliminar el registro.');
+                  }
+                });
+              } else {
+                console.error('ID del servicio no definido al intentar eliminar el registro.');
+                alert('Error al eliminar el registro: ID no definido.');
+              }
+            });
+          </script>
+        </table>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-exit" onclick="paginaInicio()" id="botonSalir">Salir</button>
+</div>
+<!----espacio para mostrar los mensajes-->
+{% if messages %}
+<div class="row">
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }}" role="alert">
+    <p>{{ message }}</p>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+</div>
+<script src="{% static '../js/inicio.js' %}"></script>
+{% endblock %}

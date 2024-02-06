@@ -1,0 +1,131 @@
+{% extends 'base_aspel.html' %}
+{% load static %}
+{% block content %}
+
+<div class="facture">
+  <div class="desarrollo"> 
+    <h1>Aspel FACTURE</h1>
+    <div class="desarrollo__inicio"> 
+      <div class="desarrollo__inicio-logo"> <img src="{% static '/Images/FACT.png' %}" alt=""/></div>
+      <div class="desarrollo__inicio-video"> 
+        <video src="{% static '/videos/Aspel FACTURE - Haz más fáciles y rápidos tus procesos de Facturación.mp4' %}" controls="controls"> </video>
+      </div>
+    </div>
+    <div class="desarrollo__button">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="beneficios-tab" data-bs-toggle="tab" data-bs-target="#beneficios-tab-pane" type="button" role="tab" aria-controls="beneficios-tab-pane" aria-selected="true">Beneficios</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="funciones-tab" data-bs-toggle="tab" data-bs-target="#funciones-tab-pane" type="button" role="tab" aria-controls="funciones-tab-pane" aria-selected="false">Funciones</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="precios-tab" data-bs-toggle="tab" data-bs-target="#precios-tab-pane" type="button" role="tab" aria-controls="precios-tab-pane" aria-selected="false">Precios</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="beneficios-tab-pane" role="tabpanel" aria-labelledby="beneficios-tab" tabindex="0">
+          <h2>Descripcion del producto </h2>
+          <p>Aspel FACTURE genera de forma segura y en segundos Comprobantes Fiscales Digitales por Internet 3.3 (CFDI) sin importar tu profesión o giro comercial, de acuerdo con las disposiciones fiscales vigentes. Captura fácilmente facturas, notas de crédito, recibos de honorarios, de arrendamiento y otros comprobantes de ingreso y egreso. También emite comprobantes con múltiples complementos de retención e información de pagos, así como complementos fiscales.</p>
+        </div>
+        <div class="tab-pane fade" id="funciones-tab-pane" role="tabpanel" aria-labelledby="funciones-tab" tabindex="0">
+          <h2>Sistema de Facturación Electrónica </h2>
+          <p>Es un sistema ideal para todo tipo de usuario, dado que cuenta con diversos módulos que hacen más fácil la comprensión del mismo, en él podrá dar de alta facturas, recibos de honorarios, notas de crédito, recibos de arrendamiento, entre otro tipo de comprobantes y si lo desea también cuenta con el apartado de complementos. </p>
+          <p>Aspel Facture es su mejor opción para poder emitir Comprobantes Fiscales Digitales por Internet (CFDI) de manera segura y en solo un par de segundos, basados en las disposiciones fiscales vigentes.</p>
+          <h2>Características generales del producto</h2>
+          <p>Sirve para automatizar el <strong>cálculo de la nómina</strong>, así como la tranquilidad de cumplir con todas las obligaciones fiscales y laborales vigentes.</p>
+          <ul> 
+            <li>Aplicación de escritorio (Windows).</li>
+            <li>Maneja hasta 99 RFC cada uno con su propia configuración.</li>
+            <li>Monousuario</li>
+            <li>Ofrece comprobantes, ya sea en pesos o dólares, a nivel estándar.  </li>
+          </ul>
+          <p>Aspel-FACTURE resuelve las necesidades de facturación de las empresas mexicanas; basta con instalarlo para que en minutos se generen <strong>Comprobantes Fiscales</strong> con todos los requisitos fiscales.</p>
+        </div>
+        <div class="tab-pane fade" id="precios-tab-pane" role="tabpanel" aria-labelledby="precios-tab" tabindex="0">
+          <h2>Suscripción</h2>
+          <h3>Sistema Administrativo Empresarial  </h3>
+          <p>
+              <strong>Versión</strong>: 6.0.   <br/>
+            <strong>Categoría</strong>:Servicios de Telecomunicaciones y Tecnología.  Solución de Escritorio. <br/>
+            <strong>Especialidad</strong>:  Facturación. <br/>
+          </p>
+          <h3>Características generales del producto </h3>
+          <ul> 
+            <li>Cumple con las disposiciones obligatorias de la Resolución Miscelánea Fiscal vigente. </li>
+            <li> Base de datos en formato Firebird®. </li>
+            <li> Emite comprobantes en pesos y dólares.</li>
+            <li>Traductor automático de versiones Aspel FACTURE 4.0 y 5.0. </li>
+            <li>Importa información de XML de facturas.</li>
+            <li> Incluye gráficas personalizables y de fácil configuración.  </li>
+            <li>Catálogo de productos con apartado para integrar fotografía. </li>
+            <li> Con Aspel Visor permite consultar el contenido del XML generado, sin tener que cerrar el Sistema.  </li>
+            <li>Actualización en línea vía Internet a las últimas mejoras de la versión. </li>
+            <li>Acceso seguro a la información mediante la asignación de una contraseña para ingresar al Sistema.  </li>
+            <li>Disponible en la modalidad monoempresa y multiempresa.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-info newBtnElement" id="infobtn" type="button" data-bs-toggle="modal" data-bs-target="#modalInfo">?</button>
+  <div class="modal-info">
+    <div class="modal" id="modalInfo" aria-hidden="true" aria-labelledby="modalInfo-gralLabel" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoLabel">Solicita más <strong>información</strong></h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="content-form">
+              <form action="">
+                <div class="form-floating mb-3"> 
+                  <input class="form-control form-control-lg" placeholder="Nombre" type="text" name="nombre" maxlength="80" required="required"/>
+                  <label class="form-label" for="nombre">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Telefono" type="text" name="telefono" maxlength="10" required="required"/>
+                  <label class="form-label" for="telefono">Telefono</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Correo" type="email" name="correo" maxlength="50" required="required"/>
+                  <label class="form-label" for="correo">Correo  </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Nombre de la empresa" type="text" name="empresa" maxlength="50"/>
+                  <label class="form-label" for="empresa">Nombre de la empresa   </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Mensaje" type="text" name="mensaje" maxlength="600" required="required"/>
+                  <label class="form-label" for="mensaje">Mensaje </label>
+                </div>
+              </form>
+            </div>
+            <div class="modal-body__buttons"> 
+              <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+              <button class="btn btn-success" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalInfoCompleta" aria-hidden="true" aria-labelledby="modalInfoCompleta" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoCompleta">Solicitud de Información </h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Informacion enviada!</div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Cancelar </button>
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

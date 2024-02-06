@@ -1,0 +1,54 @@
+{% extends 'base_cliente.html' %}
+{% load static %}
+{% block content %}
+
+<div class="pagosCliente">
+  <h2>Mis Pagos <br> <br>{{ user.username }}</h2>
+  <div class="content__contratos__tabs">
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="usuario-tab-pane" role="tabpanel" aria-labelledby="usuario-tab" tabindex="0"> 
+        <div class="content__contratos__tabs__item__body">
+          <div class="table-wrapper content__contratos__tabs__item__body__table">
+            <table class="display" id="myTable" cellspacing="0" width="100%">
+              <thead> 
+                <tr>                 
+                  <th>N°</th>
+                  <th>Servicio</th>
+                  <th>fecha </th>
+                  <th>Monto</th>
+                  <th>Descargar </th>
+                </tr>
+              </thead>
+              <tbody> 
+
+                {% for pago in pagos %}
+                <tr id="fila_id_{{pago.id_pago}}"></tr>
+                <td>{{ pago.id_pago}} </td>
+                <td>{{ pago.id_servicio.nombre_servicio }}</td>
+                <td>{{ pago.fecha }}</td>
+                <td>{{ pago.total_pago }}</td>
+                <td>
+                  {% for pago in pagos %}
+                    {% if pago.pdf %}
+                      <a href="data:application/pdf;base64,{{ pago.pdf }}" download>Descargar PDF</a>
+                    {% endif %}
+                  {% endfor %}
+                </td>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <button class="btn btn-exit" onclick="paginaInicio()" id="salir">Salir</button>
+      </div>
+    </div>
+    <script src="{% static '../js/inicio.js' %}"></script>
+    <script>
+      $(document).ready( function () {
+      $('#myTable').DataTable();
+      } );
+    </script>
+  </div>
+</div>
+
+{% endblock %}

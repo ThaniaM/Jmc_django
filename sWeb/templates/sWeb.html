@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="sWeb">  
+  <div class="desarrollo">  
+    <div class="desarrollo__dominios"> <img src="{% static 'Images/dominios.png' %}" alt="logo dominios"/>
+      <div class="desarrollo__dominios__box">
+        <div class="desarrollo__dominios__box-title"> 
+          <h2>Dominios</h2>
+        </div>
+        <div class="desarrollo__dominios__box-txt"> 
+          <p><strong>Registra</strong> el nombre de tu empresa u organización, nosotros te ayudamos.</p>
+        </div><!-- HOSTING -->
+      </div>
+    </div>
+    <div class="desarrollo__hosting"><img src="{% static 'Images/hosting.png' %}" alt="hosting"/>
+      <div class="desarrollo__hosting__box">
+        <div class="desarrollo__hosting__box-title">
+          <h2>Hosting</h2>
+        </div>
+        <div class="desarrollo__hosting__box-txt"> 
+          <p>Hosting extremadamente <strong>rápido</strong> y lleno de <strong>funciones</strong>  </p><!-- CORREO -->         
+        </div>
+      </div>
+    </div>
+    <div class="desarrollo__correo"><img src="{% static 'Images/correo.png' %}" alt="correo electrónico"/>
+      <div class="desarrollo__correo__box">
+        <div class="desarrollo__correo__box-title">
+          <h2>Correo <strong>electrónico</strong></h2>
+        </div>
+        <div class="desarrollo__correo__box-txt"> 
+          <p>Usa <strong>cuentas profesionales</strong> con tu propio dominio </p>
+        </div>
+      </div><!-- PAGINA -->                   
+    </div>
+    <div class="desarrollo__pagina"><img src="{% static 'Images/pagina.jpg' %}" alt="página web"/>
+      <div class="desarrollo__pagina__box">
+        <div class="desarrollo__pagina__box-title">
+          <h2>Creamos tu <strong>página web</strong></h2>
+        </div>
+        <div class="desarrollo__pagina__box-txt"> 
+          <p><strong>Desarrollamos</strong> tu página web <strong>a la medida</strong></p>
+        </div><!-- SERVIDORES --> 
+      </div>
+    </div>
+    <div class="desarrollo__servidores"><img src="{% static 'Images/servidores.jpg' %}" alt="servidores"/>
+      <div class="desarrollo__servidores__box">
+        <div class="desarrollo__servidores__box-title">
+          <h2><strong>Servidores</strong>    </h2>
+        </div>
+        <div class="desarrollo__servidores__box-txt"> 
+          <p>Nos encargamos de implementar la <strong>arquitectura </strong> que necesites para poner en marcha tus aplicaciones</p>
+        </div><!-- APLICACIONES -->
+      </div>
+    </div>
+    <div class="desarrollo__aplicaciones"><img src="{% static 'Images/Desarrollo-apps-moviles.jpg' %}" alt="aplicaciones"/>
+      <div class="desarrollo__aplicaciones__box">
+        <div class="desarrollo__aplicaciones__box-title">
+          <h2><strong>Aplicaciones</strong> a la medida    </h2>
+        </div>
+        <div class="desarrollo__aplicaciones__box-txt"> 
+          <p><strong>Desarrollamos</strong> aplicaciones a la medida, Android, iOS, Escritorio o Web</p>
+        </div>
+      </div><!-- TIENDA ONLINE -->
+    </div>
+    <div class="desarrollo__tienda"><img src="{% static 'Images/tienda.jpeg' %}" alt="tienda"/>
+      <div class="desarrollo__tienda__box">
+        <div class="desarrollo__tienda__box-title">
+          <h2><strong>Tienda</strong> en línea de computación   </h2>
+        </div>
+        <div class="desarrollo__tienda__box-txt"> 
+          <p>Encuentra los <strong>mejores equipos</strong> para tu empresa u organización </p><!-- SOPORTE INFORMATICO -->
+        </div>
+      </div>
+    </div>
+    <div class="desarrollo__informatico"><img src="{% static 'Images/mantenimiento.png' %}" alt="soporte informatico"/>
+      <div class="desarrollo__informatico__box">
+        <div class="desarrollo__informatico__box-title">
+          <h2><strong>Soporte</strong> informático     </h2>
+        </div>
+        <div class="desarrollo__informatico__box-txt"> 
+          <p><strong>Mantenimiento</strong> preventivo y correctivo a equipos de cómputo </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-info newBtnElement" id="infobtn" type="button" data-bs-toggle="modal" data-bs-target="#modalInfo">?</button>
+  <div class="modal-info">
+    <div class="modal" id="modalInfo" aria-hidden="true" aria-labelledby="modalInfo-gralLabel" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoLabel">Solicita más <strong>información</strong></h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="content-form">
+              <form action="">
+                <div class="form-floating mb-3"> 
+                  <input class="form-control form-control-lg" placeholder="Nombre" type="text" name="nombre" maxlength="80" required="required"/>
+                  <label class="form-label" for="nombre">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Telefono" type="text" name="telefono" maxlength="10" required="required"/>
+                  <label class="form-label" for="telefono">Telefono</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Correo" type="email" name="correo" maxlength="50" required="required"/>
+                  <label class="form-label" for="correo">Correo  </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Nombre de la empresa" type="text" name="empresa" maxlength="50"/>
+                  <label class="form-label" for="empresa">Nombre de la empresa   </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Mensaje" type="text" name="mensaje" maxlength="600" required="required"/>
+                  <label class="form-label" for="mensaje">Mensaje </label>
+                </div>
+              </form>
+            </div>
+            <div class="modal-body__buttons"> 
+              <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+              <button class="btn btn-success" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalInfoCompleta" aria-hidden="true" aria-labelledby="modalInfoCompleta" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoCompleta">Solicitud de Información </h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Informacion enviada!</div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Cancelar </button>
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

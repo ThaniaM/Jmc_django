@@ -1,0 +1,91 @@
+{% extends 'base_cliente.html' %}
+{% load static %}
+{% block content %}
+
+<div class="contratosCliente">
+  <h2 class="title">Mis Tickets</h2>
+  <div class="content__contratos__tabs">
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="usuario-tab-pane" role="tabpanel" aria-labelledby="usuario-tab" tabindex="0"> 
+        <div class="content__contratos__tabs__item__body">
+          <div class="table-wrapper content__contratos__tabs__item__body__table">
+            <table class="display" id="myTable" cellspacing="0" width="100%">
+              <thead> 
+                <tr>                 
+                  <th>N°</th>
+                  <th>Fecha</th>
+                  <th>Nombre</th>
+                  <th>Detalles </th>
+                </tr>
+              </thead>
+              <tbody> 
+                <tr> 
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td> 
+                    <button class="btn btn-link newBtnElement" type="button" data-bs-toggle="modal" data-bs-target="#modalDetalleTicketCliente">Ver mas ...</button>
+                    <div class="modal-ticket-cliente">
+                      <div class="modal" id="modalDetalleTicketCliente" aria-hidden="true" aria-labelledby="#modalDetalleTicketClienteLabel" tabindex="-1">
+                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 class="modal-title" id="modalDetalleTicketClienteLabel">Informacion del <strong>Ticket</strong></h2>
+                              <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="content-form">
+                                <form action="">
+                                  <div class="form-floating mb-3">
+                                    <input class="form-control form-control-lg" placeholder="Fecha del tecket" type="date" name="fecha_ticket" required="required" readonly="readonly"/>
+                                    <label class="form-label" for="fecha_ticket">Fecha</label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                    <input class="form-control form-control-lg" placeholder="Nombre del cliente" type="text" name="nombre" maxlength="80" required="required" readonly="readonly"/>
+                                    <label class="form-label" for="nombre">Nombre</label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                    <input class="form-control form-control-lg" placeholder="RFC" type="text" name="rfc" maxlength="13" required="required" readonly="readonly"/>
+                                    <label class="form-label" for="rfc">RFC   </label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                    <input class="form-control form-control-lg" placeholder="contacto" type="text" name="nom_contacto" maxlength="50" required="required" readonly="readonly"/>
+                                    <label class="form-label" for="contacto">Contacto</label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                    <input class="form-control form-control-lg" placeholder="asunto del ticket" type="text" name="mensaje" maxlength="600" required="required" readonly="readonly"/>
+                                    <label class="form-label" for="mensaje">Asunto</label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                    <input class="form-control form-control-lg" placeholder="archivo del ticket" type="file" name="archivo" required="required" readonly="readonly"/>
+                                    <label class="form-label" for="archivo">Archivo</label>
+                                  </div>
+                                </form>
+                              </div>
+                              <div class="modal-body__buttons"> 
+                                <button class="btn btn-success" data-bs-dismiss="modal" aria-label="Close">Aceptar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <button class="btn btn-exit" onclick="paginaInicio()" id="salir">Salir</button>
+      </div>
+    </div>
+    <script src="{% static '../js/inicio.js' %}"></script>
+    <script>
+      $(document).ready( function () {
+        $('#myTable').DataTable();
+      } );
+    </script>
+  </div>
+</div>
+
+{% endblock %}

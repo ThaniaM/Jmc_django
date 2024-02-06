@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="mantenimiento">
+  <div class="inicio">
+      <!-- imagen de incio de la pagina -->
+    <div class="inicio__contenido">
+      <div class="inicio__contenido-titulo1">
+        <h2>Mantén tus equipos de computo en estado óptimo</h2>
+      </div>
+      <div class="inicio__contenido-titulo2">
+        <h2>Mantenimiento preventivo y correctivo</h2>
+      </div>
+    </div>
+  </div>
+  <div class="desarrollo"> 
+    <div class="desarrollo__contenido"> 
+      <div class="desarrollo__contenido-titulo">
+        <h2>¿Por que adquirir una póliza de servicio con nosotros?</h2>
+      </div>
+      <div class="desarrollo__contenido__op">
+        <div class="desarrollo__contenido__op__prof">
+          <div class="desarrollo__contenido__op__prof-txt"> 
+            <h2>Profesionalismo </h2>
+            <p>Llevamos un <strong>estricto control</strong> en nuestros procesos de revisión y mantenimiento.</p>
+          </div>
+          <div class="desarrollo__contenido__op__prof-img"><img src="{% static '/images/Icons/Profesionalismo.svg' %}" alt="icono"/></div>
+        </div>
+        <div class="desarrollo__contenido__op__exp">
+          <div class="desarrollo__contenido__op__exp-txt"> 
+            <h2>Experiencia </h2>
+            <p>Nuestra mayor fortaleza es nuestra <strong>amplia experiencia</strong> en resolver problemas técnicos.</p>
+          </div>
+          <div class="desarrollo__contenido__op__exp-img"><img src="{% static '/images/Icons/Experiencia.svg' %}" alt="icono"/></div>
+        </div>
+        <div class="desarrollo__contenido__op__dist">
+          <div class="desarrollo__contenido__op__dist-txt"> 
+            <h2>Somos distribuidores </h2>
+            <p>Nosotros adquirimos piezas de reemplazo <strong>directamente con el fabricante</strong> sin intermediaros, beneficiando directamente en los costos.</p>
+          </div>
+          <div class="desarrollo__contenido__op__dist-img"><img src="{% static '/images/Icons/Distribuidores.svg' %}" alt="icono"/></div>
+        </div>
+        <div class="desarrollo__contenido__op__conf">
+          <div class="desarrollo__contenido__op__conf-txt"> 
+            <h2>Confidencialidad </h2>
+            <p>La <strong>información</strong> de nuestros clientes siempre está <strong>segura</strong>. Generamos un acuerdo de confidencialidad.</p>
+          </div>
+          <div class="desarrollo__contenido__op__conf-img"><img src="{% static '/images/Icons/confidencialidad.svg' %}" alt="icono"/></div>
+        </div>
+        <div class="desarrollo__contenido__op__solutions">
+          <div class="desarrollo__contenido__op__solutions-txt"> 
+            <h2>Damos soluciones </h2>
+            <p>No solo reparamos computadoras, <strong>resolvemos situaciones</strong>. El alto grado de compromiso exige dar el mejor servicio.</p>
+          </div>
+          <div class="desarrollo__contenido__op__solutions-img"><img src="{% static '/images/Icons/soluciones.svg' %}" alt="icono"/></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-info newBtnElement" id="infobtn" type="button" data-bs-toggle="modal" data-bs-target="#modalInfo">?</button>
+  <div class="modal-info">
+    <div class="modal" id="modalInfo" aria-hidden="true" aria-labelledby="modalInfo-gralLabel" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoLabel">Solicita más <strong>información</strong></h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="content-form">
+              <form action="">
+                <div class="form-floating mb-3"> 
+                  <input class="form-control form-control-lg" placeholder="Nombre" type="text" name="nombre" maxlength="80" required="required"/>
+                  <label class="form-label" for="nombre">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Telefono" type="text" name="telefono" maxlength="10" required="required"/>
+                  <label class="form-label" for="telefono">Telefono</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Correo" type="email" name="correo" maxlength="50" required="required"/>
+                  <label class="form-label" for="correo">Correo  </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Nombre de la empresa" type="text" name="empresa" maxlength="50"/>
+                  <label class="form-label" for="empresa">Nombre de la empresa   </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Mensaje" type="text" name="mensaje" maxlength="600" required="required"/>
+                  <label class="form-label" for="mensaje">Mensaje </label>
+                </div>
+              </form>
+            </div>
+            <div class="modal-body__buttons"> 
+              <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+              <button class="btn btn-success" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalInfoCompleta" aria-hidden="true" aria-labelledby="modalInfoCompleta" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoCompleta">Solicitud de Información </h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Informacion enviada!</div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Cancelar </button>
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

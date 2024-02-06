@@ -1,0 +1,122 @@
+{% extends 'base_aspel.html' %}
+{% load static %}
+{% block content %}
+
+<div class="coi">
+  <div class="desarrollo"> 
+    <h1>Aspel COI</h1>
+    <div class="desarrollo__inicio"> 
+      <div class="desarrollo__inicio-logo"> <img src="{% static '/Images/COI.png' %}" alt=""/></div>
+      <div class="desarrollo__inicio-video"> 
+        <video src="{% static '/videos/Demo Aspel COI 8.0 - Sistemas de Contabilidad Integral.mp4' %}" controls="controls"> </video>
+      </div>
+    </div>
+    <div class="desarrollo__button">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="beneficios-tab" data-bs-toggle="tab" data-bs-target="#beneficios-tab-pane" type="button" role="tab" aria-controls="beneficios-tab-pane" aria-selected="true">Beneficios</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="funciones-tab" data-bs-toggle="tab" data-bs-target="#funciones-tab-pane" type="button" role="tab" aria-controls="funciones-tab-pane" aria-selected="false">Funciones</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="precios-tab" data-bs-toggle="tab" data-bs-target="#precios-tab-pane" type="button" role="tab" aria-controls="precios-tab-pane" aria-selected="false">Precios</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="beneficios-tab-pane" role="tabpanel" aria-labelledby="beneficios-tab" tabindex="0">
+          <h2>Descripcion del producto </h2>
+          <p>Aspel COI es el Sistema de Contabilidad Integral que <strong>procesa, integra y mantiene actualizada la información contable y fiscal</strong> de tu empresa de forma segura y confiable. </p>
+          <p>Te ayuda a cumplir fácilmente con las <strong>disposiciones fiscales para el registro y envío de la Contabilidad Electrónica</strong>. Conoce y evalúa en cualquier momento la situación financiera de tu negocio a través de los diversos reportes, documentos y gráficas que te proporciona. </p>
+          <p>Lleva un <strong>control de los gastos, ingresos y presupuestos</strong> en diferentes monedas; y genera oportunamente la información necesaria para la preparación de tus declaraciones de impuestos como IVA, ISR y DIOT. </p>
+          <p>Ahora, su nueva versión te ayuda a <strong>proteger más tu Contabilidad</strong> porque identifica en automático a las Empresas que Facturan Operaciones Inexistentes o EFOS y a validar la situación fiscal de tus socios comerciales.</p>
+        </div>
+        <div class="tab-pane fade" id="funciones-tab-pane" role="tabpanel" aria-labelledby="funciones-tab" tabindex="0">
+          <h2>Sistema de Contabilidad Integral</h2>
+          <p>Aspel COI es un sistema que <strong>integra, procesa y mantiene</strong> al día la información fiscal y contable de su empresa en forma confiable y segura. Cumpliendo con todas las especificaciones y funciones para el correcto manejo de la nueva contabilidad electrónica, con base en las disposiciones fiscales vigentes.</p>
+          <p>Genera distintos reportes, gráficas y documentos de trabajo que permiten determinar la situación financiera de cada empresa, así como generar las diferentes <strong>declaraciones fiscales</strong> e informativas (IVA, ISR y DIOT).</p>
+          <p>Con el sistema de Aspel COI lleva los registros y asocia los comprobantes a los asientos contables, incluyendo los CFDI, para el cumplimiento del manejo de la contabilidad electrónica, en medios electrónicos, de acuerdo a las <strong>Reformas Fiscales vigentes</strong>. Controla los ingresos, gastos y presupuestos de cada uno de los centros de costos, proyecto o departamento, utilizando diferentes monedas.</p>
+          <p>Permite conocer la <strong>situación financiera</strong> en cualquier momento a través de consultas y reportes como el balance general y el estado de resultados.</p>
+        </div>
+        <div class="tab-pane fade" id="precios-tab-pane" role="tabpanel" aria-labelledby="precios-tab" tabindex="0">
+          <h2>Suscripción</h2>
+          <h3>Sistema de Nómina Integral  </h3>
+          <p>
+              <strong>Versión</strong>:9.0   <br/>
+            <strong>Categoría</strong>:Servicios de Telecomunicaciones y Tecnología
+            <strong>Solución de Escritorio.</strong> <br/>
+            <strong>Especialidad</strong>:  Contabilidad <br/>
+          </p>
+          <h3>Características generales del producto </h3>
+          <ul> 
+            <li>Procesa, integra y mantiene actualizada la información contable y fiscal atendiendo todos los requisitos de la Contabilidad Electrónica. </li>
+            <li>Valida en automático los RFC de terceros directamente desde la lista negra del SAT (EFOS). </li>
+            <li> Controla los CFDI de gastos corporativos, desde cualquier lugar.  </li>
+            <li> Analiza reportes comparativos de estados financieros anuales o por periodo. </li>
+            <li>Obtén útiles reportes de IEPS e IVA fronterizo.      </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-info newBtnElement" id="infobtn" type="button" data-bs-toggle="modal" data-bs-target="#modalInfo">?</button>
+  <div class="modal-info">
+    <div class="modal" id="modalInfo" aria-hidden="true" aria-labelledby="modalInfo-gralLabel" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoLabel">Solicita más <strong>información</strong></h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="content-form">
+              <form action="">
+                <div class="form-floating mb-3"> 
+                  <input class="form-control form-control-lg" placeholder="Nombre" type="text" name="nombre" maxlength="80" required="required"/>
+                  <label class="form-label" for="nombre">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Telefono" type="text" name="telefono" maxlength="10" required="required"/>
+                  <label class="form-label" for="telefono">Telefono</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Correo" type="email" name="correo" maxlength="50" required="required"/>
+                  <label class="form-label" for="correo">Correo  </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Nombre de la empresa" type="text" name="empresa" maxlength="50"/>
+                  <label class="form-label" for="empresa">Nombre de la empresa   </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Mensaje" type="text" name="mensaje" maxlength="600" required="required"/>
+                  <label class="form-label" for="mensaje">Mensaje </label>
+                </div>
+              </form>
+            </div>
+            <div class="modal-body__buttons"> 
+              <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+              <button class="btn btn-success" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalInfoCompleta" aria-hidden="true" aria-labelledby="modalInfoCompleta" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoCompleta">Solicitud de Información </h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Informacion enviada!</div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Cancelar </button>
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

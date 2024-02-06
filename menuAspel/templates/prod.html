@@ -1,0 +1,126 @@
+{% extends 'base_aspel.html' %}
+{% load static %}
+{% block content %}
+
+<div class="prod">
+  <div class="desarrollo"> 
+    <h1>Aspel PROD</h1>
+    <div class="desarrollo__inicio"> 
+      <div class="desarrollo__inicio-logo"> <img src="{% static '/Images/PROD.png' %}" alt=""/></div>
+      <div class="desarrollo__inicio-video"> 
+        <video src="{% static '/videos/Demo PROD 4.0 - Sistema de Control de Producción.mp4' %}" controls="controls"> </video>
+      </div>
+    </div>
+    <div class="desarrollo__button">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="beneficios-tab" data-bs-toggle="tab" data-bs-target="#beneficios-tab-pane" type="button" role="tab" aria-controls="beneficios-tab-pane" aria-selected="true">Beneficios</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="funciones-tab" data-bs-toggle="tab" data-bs-target="#funciones-tab-pane" type="button" role="tab" aria-controls="funciones-tab-pane" aria-selected="false">Funciones</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="precios-tab" data-bs-toggle="tab" data-bs-target="#precios-tab-pane" type="button" role="tab" aria-controls="precios-tab-pane" aria-selected="false">Precios</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="beneficios-tab-pane" role="tabpanel" aria-labelledby="beneficios-tab" tabindex="0">
+          <h2>Descripcion del producto </h2>
+          <p>Aspel PROD permite la planeación y control de los procesos de fabricación de la empresa, asegurando una óptima administración de inventarios y costos. Proporciona, además, un eficiente seguimiento a las órdenes de producción, mejorando los tiempos de entrega. Actualiza y procesa la información de manera rápida al integrarse con la base de datos de Aspel SAE, de donde obtiene la materia prima y sub-ensambles para realizar los procesos de producción y, posteriormente, actualizar el inventario con los productos terminados.</p>
+        </div>
+        <div class="tab-pane fade" id="funciones-tab-pane" role="tabpanel" aria-labelledby="funciones-tab" tabindex="0">
+          <h2>Sistema de Control de Produccion </h2>
+          <p>Un programa de gestión de procesos de fabricación te ayuda a planear para incrementar la productividad.</p>
+          <ul> 
+            <li>Administra inventarios, optimiza materia prima y calcula costos de producción.</li>
+            <li>Es ideal para producción industrial, textil y otras empresas de manufactura, ganaderas, de extracción, automotriz y otros giros.Proveedores y compras</li>
+          </ul>
+          <p>¡Comprueba cómo la gestión de producción te ayuda a simplificar tus operaciones en la industria!</p>
+        </div>
+        <div class="tab-pane fade" id="precios-tab-pane" role="tabpanel" aria-labelledby="precios-tab" tabindex="0">
+          <h2>Suscripción</h2>
+          <h3>Sistema de Control de Producción  </h3>
+          <p>
+              <strong>Versión</strong>: 5.0.  <br/>
+            <strong>Categoría</strong>:Servicios de Telecomunicaciones y Tecnología.  Solución de Escritorio. <br/>
+            <strong>Especialidad</strong>: Producción. <br/>
+          </p>
+          <h3>Características generales del producto </h3>
+          <ul> 
+            <li>Base de datos integrada en Aspel SAE 9.0 en formato Firebird y posibilidad de uso en SQL Server®. </li>
+            <li>Captura observaciones en productos terminados, hojas de costos, órdenes y seguimiento de las mismas.  </li>
+            <li>Proporciona el comparativo general y detallado del costo real vs. estimado </li>
+            <li>Exporta información en formato TXT, HTML, XML o Excel </li>
+            <li>Cambia un componente del mismo tipo en todos los productos terminados a través de la opción sustitución masiva. </li>
+            <li>Genera reportes en formato QR2 que entregan información precisa en el menor tiempo posible </li>
+            <li>Actualización en línea vía internet a las últimas mejoras de la versión </li>
+            <li>Acceso seguro a la información mediante el manejo de perfiles de usuario  </li>
+            <li>Disponible en la modalidad de 1 usuario, 99 empresas y licencias de usuarios adicionales</li>
+            <li>Cuenta con diferentes “Skins” o temas que permiten personalizar la vista del sistema al gusto del usuario. </li>
+            <li>Barra de búsqueda inteligente, la cual presenta una lista de todas las opciones que tienen relación con el tema especificado. </li>
+            <li>Actualización en línea vía Internet a las últimas mejoras de la versión (Aspel-AL)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-info newBtnElement" id="infobtn" type="button" data-bs-toggle="modal" data-bs-target="#modalInfo">?</button>
+  <div class="modal-info">
+    <div class="modal" id="modalInfo" aria-hidden="true" aria-labelledby="modalInfo-gralLabel" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoLabel">Solicita más <strong>información</strong></h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="content-form">
+              <form action="">
+                <div class="form-floating mb-3"> 
+                  <input class="form-control form-control-lg" placeholder="Nombre" type="text" name="nombre" maxlength="80" required="required"/>
+                  <label class="form-label" for="nombre">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Telefono" type="text" name="telefono" maxlength="10" required="required"/>
+                  <label class="form-label" for="telefono">Telefono</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Correo" type="email" name="correo" maxlength="50" required="required"/>
+                  <label class="form-label" for="correo">Correo  </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Nombre de la empresa" type="text" name="empresa" maxlength="50"/>
+                  <label class="form-label" for="empresa">Nombre de la empresa   </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Mensaje" type="text" name="mensaje" maxlength="600" required="required"/>
+                  <label class="form-label" for="mensaje">Mensaje </label>
+                </div>
+              </form>
+            </div>
+            <div class="modal-body__buttons"> 
+              <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+              <button class="btn btn-success" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalInfoCompleta" aria-hidden="true" aria-labelledby="modalInfoCompleta" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoCompleta">Solicitud de Información </h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Informacion enviada!</div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Cancelar </button>
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

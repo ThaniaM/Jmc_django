@@ -1,0 +1,170 @@
+{% extends 'base_aspel.html' %}
+{% load static %}
+{% block content %}
+
+<div class="sae">
+  <div class="desarrollo"> 
+    <h1>Aspel SAE</h1>
+    <div class="desarrollo__inicio"> 
+      <div class="desarrollo__inicio-logo"> <img src="{% static '/Images/SAE.png' %}" alt=""/></div>
+      <div class="desarrollo__inicio-video"> 
+        <video src="{% static '/videos/Nuevo Aspel SAE - Digitaliza tu empresa y empieza a vender en línea.mp4' %}" controls="controls"> </video>
+      </div>
+    </div>
+    <div class="desarrollo__button">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="beneficios-tab" data-bs-toggle="tab" data-bs-target="#beneficios-tab-pane" type="button" role="tab" aria-controls="beneficios-tab-pane" aria-selected="true">Beneficios</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="funciones-tab" data-bs-toggle="tab" data-bs-target="#funciones-tab-pane" type="button" role="tab" aria-controls="funciones-tab-pane" aria-selected="false">Funciones</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="precios-tab" data-bs-toggle="tab" data-bs-target="#precios-tab-pane" type="button" role="tab" aria-controls="precios-tab-pane" aria-selected="false">Precios</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tienda-tab" data-bs-toggle="tab" data-bs-target="#tienda-tab-pane" type="button" role="tab" aria-controls="tienda-tab-pane" aria-selected="false">Tienda</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="beneficios-tab-pane" role="tabpanel" aria-labelledby="beneficios-tab" tabindex="0">
+          <h2>Descripcion del producto </h2>
+          <p>Software administrativo que controla el ciclo de todas las operaciones de compra-venta de la empresa como: inventarios, servicios, clientes, facturación, cuentas por cobrar, vendedores, compras, proveedores y cuentas por pagar.</p>
+          <h2>Principales Funcionalidades </h2>
+          <ul> 
+            <li>Control de inventarios y servicios</li>
+            <li>Administración de compras y ventas</li>
+            <li>comprobantes fiscales CFDI 4.0</li>
+            <li>Facturación electrónica ilimitada</li>
+            <li> Carta porte</li>
+            <li>Conexión con tiendas en línea (comercio electrónico)</li>
+            <li>Manejo de proveedores</li>
+            <li> Seguimiento de clientes</li>
+            <li> Útiles reportes y estadísticas </li>
+            <li>Punto de venta</li>
+            <li> Movilidad empresarial</li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="funciones-tab-pane" role="tabpanel" aria-labelledby="funciones-tab" tabindex="0">
+          <h2>Sistema Administrativo Empresarial</h2>
+          <p>Aspel SAE permite controlar el ciclo de las operaciones de compra-venta de su empresa, como: clientes, proveedores, cuentas por pagar, cuentas por cobrar, inventarios, facturación, vendedores, compras y ventas, automatizando los procesos administrativos de cada empresa.</p>
+          <h2>Nuevas características de la versión de Aspel SAE.</h2>
+          <ul> 
+            <li>Proveedores y compras</li>
+            <li>Emisión de documento de compra-venta</li>
+            <li>Facturación electrónica 4.0</li>
+            <li>Validación de datos fiscales</li>
+            <li>Genera tus CFDI con el complemento carta porte</li>
+            <li>Número de esquemas de cancelación</li>
+            <li>Tienda en línea</li>
+            <li>Expande tus limites de venta</li>
+            <li>Punto de venta </li>
+          </ul>
+          <p>Este sistema ofrece gran movilidad a las empresas, permitiendo a las sucursales conectarse remotamente al servidor, ya sea por dispositivos móviles o equipos de cómputo, permitiendo así el acceso a toda la información comercial y/o administrativa.</p>
+          <p>Mantiene una interfaz con Aspel-COI para relacionar los folios fiscales de los CFDI a las pólizas, con base en los requerimientos vigentes de la Contabilidad Electrónica.</p>
+        </div>
+        <div class="tab-pane fade" id="precios-tab-pane" role="tabpanel" aria-labelledby="precios-tab" tabindex="0">
+          <h2>Suscripción</h2>
+          <h3>Sistema Administrativo Empresarial </h3>
+          <p>
+              <strong>Versión</strong>: 8.0  <br/>
+            <strong>Categoría</strong>:Servicios de Telecomunicaciones y Tecnología
+            <strong>Solución de Escritorio.</strong> <br/>
+            <strong>Especialidad</strong>: Administración. <br/>
+          </p>
+          <h3>Características generales del producto </h3>
+          <ul> 
+            <li>Cumple con las disposiciones obligatorias de la Resolución Miscelánea Fiscal Vigente.</li>
+            <li>Base de datos en formato FirebirdⓇ </li>
+            <li>Traductor automático de datos de versiones Aspel SAE 7.0.  </li>
+            <li>Exportación de toda la información del sistema a formatos: XLS, HTML, PDF.</li>
+            <li>Integra módulos intuitivos de clientes y cuentas por cobrar, facturas y vendedores, inventarios, proveedores y cuentas por pagar, compras y estadísticas.</li>
+            <li>Importación de hojas de cálculo de Microsoft Excel® de los catálogos y documentos. </li>
+            <li>Manejo de moneda nacional y extranjera.</li>
+            <li>Configuración de addendas y complementos para el CFDI </li>
+            <li>Actualización en línea via Internet a las últimas mejoras de la versión. </li>
+            <li>Registro de perfiles de usuario para un acceso seguro a la información.</li>
+            <li>Disponible en la modalidad de 1 usuario 99 empresas y licencias de usuarios adicionales. </li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="tienda-tab-pane" role="tabpanel" aria-labelledby="tienda-tab" tabindex="0">
+          <div class="desarrollo__imagenes"> <img src="{% static '/Images/mercado_libre.png' %}" alt="Mercado Libre"/><img src="{% static '/Images/Claro-Shop.png' %}" alt="Claro Shop"/></div>
+          <div class="desarrollo__informacion"> 
+            <div class="desarrollo__informacion-online"> <img src="{% static '/Images/Icons/venta online.svg' %}" alt="venta en linea"/>
+              <p>Publica fácilmente y sin costo tus productos para iniciar la venta en línea.</p>
+            </div>
+            <div class="desarrollo__informacion-sincroniza"> <img src="{% static '/Images/Icons/sincroniza.svg' %}" alt="sincronizacion automatica"/>
+              <p>Sincroniza en automático pedidos, inventarios y ventas.</p>
+            </div>
+            <div class="desarrollo__informacion-visualiza"> <img src="{% static '/Images/Icons/visualiza.svg' %}" alt="visualiza los pedidos pendientes"/>
+              <p>Visualiza los pedidos pendientes para atenderlos de inmediato.</p>
+            </div>
+            <div class="desarrollo__informacion-resumen"> <img src="{% static '/Images/Icons/resumen.svg' %}" alt="resumen de publicaciones de productos"/>
+              <p>Conoce el resumen de publicaciones de productos y ventas generadas.  </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-info newBtnElement" id="infobtn" type="button" data-bs-toggle="modal" data-bs-target="#modalInfo">?</button>
+  <div class="modal-info">
+    <div class="modal" id="modalInfo" aria-hidden="true" aria-labelledby="modalInfo-gralLabel" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoLabel">Solicita más <strong>información</strong></h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="content-form">
+              <form action="">
+                <div class="form-floating mb-3"> 
+                  <input class="form-control form-control-lg" placeholder="Nombre" type="text" name="nombre" maxlength="80" required="required"/>
+                  <label class="form-label" for="nombre">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Telefono" type="text" name="telefono" maxlength="10" required="required"/>
+                  <label class="form-label" for="telefono">Telefono</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Correo" type="email" name="correo" maxlength="50" required="required"/>
+                  <label class="form-label" for="correo">Correo  </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Nombre de la empresa" type="text" name="empresa" maxlength="50"/>
+                  <label class="form-label" for="empresa">Nombre de la empresa   </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Mensaje" type="text" name="mensaje" maxlength="600" required="required"/>
+                  <label class="form-label" for="mensaje">Mensaje </label>
+                </div>
+              </form>
+            </div>
+            <div class="modal-body__buttons"> 
+              <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+              <button class="btn btn-success" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalInfoCompleta" aria-hidden="true" aria-labelledby="modalInfoCompleta" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoCompleta">Solicitud de Información </h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Informacion enviada!</div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Cancelar </button>
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

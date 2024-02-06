@@ -1,0 +1,290 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+{% block content %}
+<div class="container__controlstaff">
+  <div class="container__controlstaff__administrador__title">
+    <h1>Control de ajustes</h1>
+    <div class="container__controlstaff__administrador__title__box"><a href="{% url 'listar_staff' %}">Staff<img
+          class="staff" src="{% static '/Images/Icons/staff.svg' %}" alt="ajustes de staff" /></a></div>
+  </div>
+  <div class="container__controlstaff__administrador__title">
+    <h2>Control de staff</h2>
+  </div>
+  
+  <!-- Formulario para agregar un nuevo staff -->
+  <button class="btn btn-secondary newBtnElement" type="button" data-bs-toggle="modal"
+    data-bs-target="#modalNvoStaff">Nuevo</button>
+  <div class="modal-staff">
+    {% if messages %}
+    <div class="row">
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}" role="alert">
+        <p>{{ message }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+   </div>
+    <div class="modal" id="modalNvoStaff" aria-hidden="true" aria-labelledby="modalNvoStaffLabel" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalNvoStaffLabel">Añadir nuevo <strong>Staff</strong></h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div id="mensajeExito" class="alert alert-success" style="display: none;">
+              Datos enviados con éxito!
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="content-form">
+              <form method="POST" action="{%url 'create_staff' %}">
+                {% csrf_token %}
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Nombre del staff" type="text" name="nombre"
+                    maxlength="80" id="nombre" />
+                  <label class="form-label" for="nombre">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Télefono" type="text" name="telefono"
+                    id="telefono" maxlength="10" />
+                  <label class="form-label" for="telefono">Telefono</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <label class="form-label" for="departamento">Departamento:</label>
+                  <select class="form-control form-control-lg form-select" name="departamento" id="departamento">
+                    <option value="no"> </option>
+                    <option value="AWS">AWS</option>
+                    <option value="Hosting">Hosting </option>
+                  </select>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Usuario" type="text" name="username"
+                    maxlength="80" id="username" />
+                  <label class="form-label" for="username">Usuario </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Contraseña" type="password" name="password"
+                    maxlength="12" id="password" />
+                  <label class="form-label" for="password">Contraseña </label>
+                </div>
+                <div class="modal-body__buttons">
+                  <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                  <button class="btn btn-success" data-bs-target="#modalNvoStaffDos" data-bs-toggle="modal"
+                    data-bs-dismiss="modal">Guardar</button>
+                </div>
+              </form>
+            </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modalNvoStaffDos" aria-hidden="true" aria-labelledby="modalNvoStaffDos" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="modalNvoStaffDos">Nuevo Staff </h3>
+              <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">Staff agregado!</div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container__controlstaff__administrador__table">
+      <table class="display" id="myTable" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            <th>Departamento</th>
+            <th>Detalles</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for staff in staffs %}
+          <tr id="fila_id_{{staff.id_staff}}">
+            <td> {{ staff.id_staff}} </td>
+            <td> {{ staff.nombre}} </td>
+            <td> {{ staff.telefono}} </td>
+            <td> {{ staff.departamento}} </td>
+            <td>
+              <a href="{% url 'editar_staff' staff.id_staff %}" data-bs-toggle="modal" data-id="{{ staff.id_staff}}"
+                data-bs-target="#modalEditarStaff" title="Modificar">
+                <button class="btn btn-link newBtnElement" type="button">Ver mas ...</button></a>
+            </td>
+            <td><a href="{% url 'editar_staff' staff.id_staff %}" data-bs-toggle="modal" data-id="{{ staff.id_staff }}"
+                data-bs-target="#modalEditarStaff" title="Modificar"> <i class="bi bi-pencil-square"></i></a>
+              <a href="{% url 'eliminar_staff' staff.id_staff %}" data-bs-toggle="modal" data-bs-target="#modalEliminar"
+                data-id="{{ staff.id_staff }}" title="Eliminar"> <i class="bi bi-trash3-fill"></i></a></td>
+          </tr>
+          {% endfor %}
+          <div class="modal-staff">
+            <div class="modal" id="modalEditarStaff" aria-hidden="true" aria-labelledby="editarStaffLabel"
+              tabindex="-1">
+              <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h2 class="modal-title" id="editarStaffLabel">Modificar <strong>Staff</strong></h2>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="content-form">
+                      <form action="#" id="editarClienteForm" method="POST">
+                        {% csrf_token %}
+                        <div class="form-floating mb-3">
+                          <input class="form-control form-control-lg" placeholder="Nombre del staff" type="text"
+                            name="nombre" maxleng="80" id="nombre2" />
+                          <label class="form-label" for="nombre2">Nombre</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input class="form-control form-control-lg" placeholder="Télefono" type="text" name="telefono"
+                            id="telefono2" maxlength="10" />
+                          <label class="form-label" for="telefono2">Telefono</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <label for="departamento2">Departamento:</label>
+                          <select class="form-control form-control-lg form-select" name="departamento"
+                            id="departamento2">
+                            <option value="no"> </option>
+                            <option value="AWS">AWS</option>
+                            <option value="Hosting">Hosting </option>
+                          </select>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input class="form-control form-control-lg" placeholder="Usuario" type="text" name="username"
+                            maxlength="80" id="username2" />
+                          <label class="form-label" for="username2">Usuario </label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input class="form-control form-control-lg" placeholder="Contraseña" type="password"
+                            name="password" maxlength="12" id="password2" />
+                          <label class="form-label" for="password2">Contraseña </label>
+                        </div>
+                        <div class="modal-body__buttons">
+                          <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                          <button class="btn btn-success" data-bs-target="#modalModificarStaffDos"
+                            data-bs-toggle="modal" data-bs-dismiss="modal">Guardar</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="modalModificarStaffDos" aria-hidden="true"
+                aria-labelledby="modalModificarStaffDos" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="modalModificarStaffDos">Modificar Staff </h3>
+                      <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">Staff modificado!</div>
+                    <div class="modal-footer">
+                      <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Aceptar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="modalEliminar" aria-hidden="true" aria-labelledby="modalEliminarLabel"
+              tabindex="-1">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalEliminarModalLabel">Eliminar</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">¿Estas seguro que desdeas eliminar?</div>
+                  <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="#modalEliminar" data-bs-toggle="modal"
+                      data-bs-dismiss="modal">Cancelar </button>
+                    <button id="confirmarEliminar" class="btn btn-secondary" type="button"
+                      data-bs-dismiss="modal">Aceptar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </tbody>
+        <script>
+          $(document).ready(function () {
+            $('#myTable').DataTable();
+          });
+
+          function updateTable() {
+            table.ajax.reload(null, false); // Recargar la tabla sin pérdida de paginación
+          }     
+          $('a[data-bs-toggle="modal"]').on('click', function () {
+            var targetModalId = $(this).data('bs-target');
+            var id_staff = $(this).data('id');
+
+            if (targetModalId === '#modalEliminar') {
+              $('#confirmarEliminar').data('id', id_staff);
+            } else {
+              $.ajax({
+                url: '{% url "editar_staff" id_staff=0 %}'.replace('0', id_staff),
+                type: 'GET',
+                data: {
+                  'id_staff': id_staff
+                },
+                success: function (data) {
+                  $('#editarStaffForm').attr('action', '{% url "editar_staff" id_staff=0 %}'.replace('0',
+                    id_staff));
+                  $('#nombre2').val(data.nombre);
+                  $('#telefono2').val(data.telefono);
+                  $('#departamento2').val(data.departamento);
+                  $('#username2').val(data.username);
+                  $('#password2').val(data.password);
+                },
+                error: function (xhr, status, error) {
+                  console.error('Error al cargar la información del registro:', error);
+                  alert('Error al cargar la información del registro.');
+                }
+          
+              });
+            }
+          });
+
+          $('#confirmarEliminar').on('click', function () {
+            var id_staff = $(this).data('id');
+
+            if (id_staff !== undefined) {
+              $.ajax({
+                url: '{% url "eliminar_staff" id_staff=0 %}'.replace('0', id_staff),
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                  'id_staff': id_staff
+                },
+                success: function (response) {
+                  console.log('Respuesta del servidor:', response);
+                  alert('Registro eliminado correctamente');
+                  // Cerrar el modal después de la eliminación
+                  $('#modalEliminar').modal('hide');
+                  // Eliminar la fila correspondiente de la tabla
+                  var table = $('#myTable').DataTable();
+                  table.row('#fila_id_' + id_staff).remove().draw();
+                  updateTable();
+                },
+                error: function (xhr, status, error) {
+                  console.error('Error al eliminar el registro:', error);
+                  alert('Error al eliminar el registro.');
+                  updateTable();
+                }
+              });
+            } else {
+              console.error('ID de staff no definido al intentar eliminar el registro.');
+              alert('Error al eliminar el registro: ID no definido.');
+            }
+          });
+        </script>
+      </table>
+      <button class="botonSalir" onclick="regresar()">Regresar</button>
+    </div>
+  <script src="../js/regresar.js"></script>
+</div>
+{% endblock %}

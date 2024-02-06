@@ -1,0 +1,204 @@
+{% extends 'base_aspel.html' %}
+{% load static %}
+{% block content %}
+
+<div class="caja">
+  <div class="desarrollo"> 
+    <h1>Aspel CAJA </h1>
+    <div class="desarrollo__inicio"> 
+      <div class="desarrollo__inicio-logo"> <img src="{% static '/Images/CAJA.png' %}" alt=""/></div>
+      <div class="desarrollo__inicio-video"> 
+        <video src="{% static '/videos/Aspel CAJA - Control efectivo de tu punto de venta.mp4' %}" controls="controls"> </video>
+      </div>
+    </div>
+    <div class="desarrollo__button">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="beneficios-tab" data-bs-toggle="tab" data-bs-target="#beneficios-tab-pane" type="button" role="tab" aria-controls="beneficios-tab-pane" aria-selected="true">Beneficios</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="funciones-tab" data-bs-toggle="tab" data-bs-target="#funciones-tab-pane" type="button" role="tab" aria-controls="funciones-tab-pane" aria-selected="false">Funciones</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="precios-tab" data-bs-toggle="tab" data-bs-target="#precios-tab-pane" type="button" role="tab" aria-controls="precios-tab-pane" aria-selected="false">Precios</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="puntoVenta-tab" data-bs-toggle="tab" data-bs-target="#puntoVenta-tab-pane" type="button" role="tab" aria-controls="puntoVenta-tab-pane" aria-selected="false">Punto de venta</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="beneficios-tab-pane" role="tabpanel" aria-labelledby="beneficios-tab" tabindex="0">
+          <h2>Descripcion del producto </h2>
+          <p>Aspel CAJA controla, administra y agiliza las operaciones de ventas, facturación e inventarios de uno o varios comercios, convirtiendo una computadora en un punto de venta capaz de operar con impresoras de tickets, cajones de dinero, básculas, lectores ópticos de código de barras, lectores de tarjetas de crédito y pantallas táctiles.</p>
+        </div>
+        <div class="tab-pane fade" id="funciones-tab-pane" role="tabpanel" aria-labelledby="funciones-tab" tabindex="0">
+          <h2>Sistema de Punto de Venta y Administración </h2>
+          <p>Software para controlar, administrar y agilizar las operaciones de ventas, facturación e inventarios de uno o varios comercios, tiendas, cajas y cajeros.</p>
+          <h2>Convierte tu equipo de cómputo en un punto de venta.</h2>
+          <h3>Principales funcionalidades</h3>
+          <ul> 
+            <li>Administración de tiendas y cajas</li>
+            <li>Control de inventarios</li>
+            <li>Seguimiento de clientes</li>
+            <li>Tecnología táctil</li>
+            <li>Incrementa tus ventas</li>
+            <li>Útiles reportes y consultas </li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="precios-tab-pane" role="tabpanel" aria-labelledby="precios-tab" tabindex="0">
+          <h2>Suscripción</h2>
+          <h3>Sistema de Punto de Venta y Administración de Comercios   </h3>
+          <p>
+              <strong>Versión</strong>: 5.0.  <br/>
+            <strong>Categoría</strong>:Servicios de Telecomunicaciones y Tecnología
+            <strong>Solución de Escritorio.</strong> <br/>
+            <strong>Especialidad</strong>: Producción. <br/>
+          </p>
+          <h3>Características generales del producto </h3>
+          <ul> 
+            <li>Cumple con las disposiciones obligatorias de la Resolución Miscelánea Fiscal vigente.</li>
+            <li>Base de datos en formato Firebird® y posibilidad de uso en formato MS-SQL®.  </li>
+            <li>Traductor automático de datos de versiones Aspel CAJA 4.0 </li>
+            <li>Importación de archivos en hojas de cálculo de Microsoft Excel® como catálogo de clientes y productos. </li>
+            <li>Ágil captura al asignar teclas de función rápida.</li>
+            <li>Formatos de tickets y facturas adaptables al tamaño de impresión. </li>
+            <li>Consolida información de ventas e inventarios de diferentes puntos de venta.  </li>
+            <li>Lleva el control de ingresos totales por tienda, cajero o periodo. </li>
+            <li>Conexión con terminales bancarias para realizar operaciones de pago por Internet (verificar servicios disponibles). </li>
+            <li>Actualización en línea vía Internet a las últimas mejoras de la versión. </li>
+            <li>Acceso seguro a la información mediante el manejo de perfiles de usuario. </li>
+            <li>Disponible en la modalidad de 1 usuario 1 empresa, 99 Cajas y licencias de usuarios adicionales.</li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="puntoVenta-tab-pane" role="tabpanel" aria-labelledby="beneficios-tab" tabindex="0">
+          <h2>Kit Punto de Venta </h2>
+          <p>Lleva el control preciso de tu negocio con las Soluciones Aspel CAJA: Punto de venta TODO INCLUIDO. Gestiona todas las operaciones de tu tienda o comercio: ingresos, existencias, ventas, cajas, cajeros, inventarios en tiendas y mucho más.</p>
+          <div class="kit">
+            <div class="kit__basica">
+              <div class="kit__basica-titulo"> 
+                <h2>Solucion Punto de Venta Básico</h2>
+              </div>
+              <div class="kit__basica-img"> <img src="{% static '/Images/solucion_basica.png' %}" alt="Punto de venta basico"/></div>
+              <div class="kit__basica-txt"> 
+                <h3>Componentes: 
+                  <ul> 
+                    <li>Aspel CAJA 4.0</li>
+                    <li>Miniprinter</li>
+                    <li>Lector</li>
+                    <li>Código de barras</li>
+                    <li>Cajón de dinero</li>
+                  </ul>
+                </h3>
+                <h3>Principales Beneficios 
+                  <ul> 
+                    <li>Controla, administra y agiliza las operaciones de venta, facturación e inventarios de uno o varios comercios, cajas y cajeros.</li>
+                    <li>Entrega de forma inmediata el comprobante de venta a tu Cliente.</li>
+                    <li>Optimiza el tiempo de cobro con el potente escáner.</li>
+                    <li>Resguarda con total seguridad tu dinero.</li>
+                  </ul>
+                </h3>
+              </div>
+            </div>
+            <div class="kit__touch"> 
+              <div class="kit__touch-titulo"> 
+                <h2>Solución Punto de Venta Touch</h2>
+              </div>
+              <div class="kit__touch-img"> <img src="{% static '/Images/caja.jpg' %}" alt="caja de punto de venta touch"/></div>
+              <div class="kit__touch-txt"> 
+                <p>La solución de Punto de Venta más completa para administrar tu negocio.</p>
+                <h3>Componentes:
+                  <ul>
+                    <li>Aspel CAJA 4.0</li>
+                    <li>Miniprinter</li>
+                    <li>Lector</li>
+                    <li>Código de barras</li>
+                    <li>Monitor Touch</li>
+                    <li>Cajón de dinero</li>
+                  </ul>
+                </h3>
+                <h3>Principales beneficios:
+                  <ul>
+                    <li>Controla, administra y agiliza las operaciones de venta, facturación e inventarios de uno o varios comercios, cajas y cajeros.</li>
+                    <li>Convierte tu PC en un poderoso Punto de Venta.</li>
+                    <li>Agiliza la captura de Notas de Venta con un práctico Monitor de pantalla touch.</li>
+                    <li>Entrega de forma inmediata el comprobante de venta a tu Cliente.</li>
+                    <li>Optimiza el tiempo de cobro con el potente escáner.</li>
+                    <li>Resguarda con total seguridad tu dinero.</li>
+                  </ul>
+                </h3>
+              </div>
+            </div>
+            <div class="kit__dispositivos"> 
+              <div class="kit__dispositivos-txt">
+                <p>Aspel CAJA te permite convertir tu PC en un Sistema de Punto de Venta y administración para consolidar el éxito de tu negocio.</p>
+              </div>
+              <div class="kit__dispositivos-img">
+                <h2>DISPOSITIVOS COMPATIBLES </h2><img src="{% static '/Images/dispositivosCAJA.png' %}" alt="lista de dispositivos compatibles"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-info newBtnElement" id="infobtn" type="button" data-bs-toggle="modal" data-bs-target="#modalInfo">?</button>
+  <div class="modal-info">
+    <div class="modal" id="modalInfo" aria-hidden="true" aria-labelledby="modalInfo-gralLabel" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoLabel">Solicita más <strong>información</strong></h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="content-form">
+              <form action="">
+                <div class="form-floating mb-3"> 
+                  <input class="form-control form-control-lg" placeholder="Nombre" type="text" name="nombre" maxlength="80" required="required"/>
+                  <label class="form-label" for="nombre">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Telefono" type="text" name="telefono" maxlength="10" required="required"/>
+                  <label class="form-label" for="telefono">Telefono</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Correo" type="email" name="correo" maxlength="50" required="required"/>
+                  <label class="form-label" for="correo">Correo  </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Nombre de la empresa" type="text" name="empresa" maxlength="50"/>
+                  <label class="form-label" for="empresa">Nombre de la empresa   </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Mensaje" type="text" name="mensaje" maxlength="600" required="required"/>
+                  <label class="form-label" for="mensaje">Mensaje </label>
+                </div>
+              </form>
+            </div>
+            <div class="modal-body__buttons"> 
+              <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+              <button class="btn btn-success" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalInfoCompleta" aria-hidden="true" aria-labelledby="modalInfoCompleta" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoCompleta">Solicitud de Información </h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Informacion enviada!</div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Cancelar </button>
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

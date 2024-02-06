@@ -1,0 +1,139 @@
+{% extends 'base_aspel.html' %}
+{% load static %}
+{% block content %}
+
+<div class="banco">
+  <div class="desarrollo"> 
+    <h1>Aspel BANCO  </h1>
+    <div class="desarrollo__inicio"> 
+      <div class="desarrollo__inicio-logo"> <img src="{% static '/Images/BANCO.png' %}" alt=""/></div>
+      <div class="desarrollo__inicio-video"> 
+        <video src="{% static '/videos/Aspel BANCO - El control efectivo de tu dinero.mp4' %}" controls="controls"> </video>
+      </div>
+    </div>
+    <div class="desarrollo__button">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="beneficios-tab" data-bs-toggle="tab" data-bs-target="#beneficios-tab-pane" type="button" role="tab" aria-controls="beneficios-tab-pane" aria-selected="true">Beneficios</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="funciones-tab" data-bs-toggle="tab" data-bs-target="#funciones-tab-pane" type="button" role="tab" aria-controls="funciones-tab-pane" aria-selected="false">Funciones</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="precios-tab" data-bs-toggle="tab" data-bs-target="#precios-tab-pane" type="button" role="tab" aria-controls="precios-tab-pane" aria-selected="false">Precios</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="beneficios-tab-pane" role="tabpanel" aria-labelledby="beneficios-tab" tabindex="0">
+          <h2>Descripcion del producto </h2>
+          <p><strong>Controla eficientemente </strong>los ingresos, egresos de cualquier cuenta bancaria, en moneda nacional y extranjera. Ofrece <strong>información financiera</strong> en todo momento como estados de cuenta, diarios de bancos y flujo de efectivo. Todos los movimientos bancarios se contabilizan automáticamente en su interfaz con Aspel COI atendiendo los requisitos de la Contabilidad Electrónica. Además, permite la programación de movimientos periódicos, así como una eficiente conciliación de las operaciones bancarias. Para una mayor eficiencia administrativa e integridad de la información con Aspel SAE ofrece la afectación simultánea de las cuentas por cobrar y/o por pagar al registrar los movimientos bancarios y con Aspel NOI posibilita la generación automática de los cheques para el pago de nómina.</p>
+        </div>
+        <div class="tab-pane fade" id="funciones-tab-pane" role="tabpanel" aria-labelledby="funciones-tab" tabindex="0">
+          <h2>Sistema de Control de Producción</h2>
+          <p>Aspel BANCO es el Sistema de Control Bancario que te ayuda a llevar un control efectivo de tu dinero; es tu mejor aliado para:</p>
+          <ul> 
+            <li>
+              <STRONG>Capturar y actualizar</STRONG> las cuentas por cobrar y cuentas por pagar
+            </li>
+            <li>Realizar la conciliación bancaria de forma automática a partir de la información proporcionada por los bancos</li>
+            <li><strong>Registrar operaciones</strong> en moneda nacional y extranjeraMonousuario</li>
+            <li>Conocer el <strong>saldo real y disponible</strong> de tus cuentas bancarias</li>
+            <li>Importar <strong>movimientos bancarios</strong> de forma masiva </li>
+            <li><strong>Conectar a tus sucursales y colaboradores</strong> remotos vía Internet</li>
+            <li>Visualizar los <strong>saldos reales y disponibles</strong> de cada cuenta con su práctico Tablero</li>
+            <li>Manejar <strong>movimientos en tránsito</strong> y multiconcepto</li>
+            <li>Llevar el <strong>control de cheques emitidos</strong> y seleccionar el formato de impresión</li>
+            <li>Planear <strong>cobros y pagos</strong> sin afectar el saldo de la cuenta</li>
+            <li><strong>Autorizar</strong> movimientos programados</li>
+            <li>Obtener el <strong>histórico de saldos</strong></li>
+          </ul>
+          <p>Así obtendrás información <strong>financiera real</strong> en todo momento, desde el flujo de efectivo hasta los estados de cuenta; y manéjala de forma segura controlando el acceso a los usuarios.</p>
+          <p>Con Aspel BANCO tienes un <strong>control integral de tus cuentas bancarias</strong> desde un solo lugar.</p>
+        </div>
+        <div class="tab-pane fade" id="precios-tab-pane" role="tabpanel" aria-labelledby="precios-tab" tabindex="0">
+          <h2>Suscripción</h2>
+          <h3>Sistema de Control Bancario </h3>
+        </div>
+        <p>
+            <strong>Versión</strong>: 6.0. <br/>
+          <strong>Categoría</strong>: Servicios de Telecomunicaciones y Tecnología. Solución de Escritorio. <br/>
+          <strong>Especialidad</strong>: Bancos. <br/>
+        </p>
+        <h3>Características generales del producto </h3>
+        <ul> 
+          <li>Base de datos en formato <strong>Firebird® </strong>y posibilidad de uso en formato <strong>MS-SQL®</strong>. </li>
+          <li>Traductor automático de datos de versiones Aspel BANCO 5.0. </li>
+          <li>Conectividad entre sucursales o colaboradores remotos. </li>
+          <li>Programa movimientos de cargos y abonos a través de la agenda de movimientos. </li>
+          <li>Exporta consultas en formato TXT, HTML, XML o Excel®. </li>
+          <li>Maneja hasta 99 tipos de moneda. </li>
+          <li>Cuenta con varios formatos de cheques: Banamex, Bancomer, Inbursa, entre otros. </li>
+          <li>Asocia documentos digitales de diferentes formatos. </li>
+          <li>Actualización en línea vía Internet a las últimas mejoras de la versión. </li>
+          <li>Acceso seguro a la información mediante el manejo de perfiles de usuario. </li>
+          <li>Disponible en la modalidad de 1 usuario, 99 empresas y licencias de usuarios adicionales.     </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-info newBtnElement" id="infobtn" type="button" data-bs-toggle="modal" data-bs-target="#modalInfo">?</button>
+  <div class="modal-info">
+    <div class="modal" id="modalInfo" aria-hidden="true" aria-labelledby="modalInfo-gralLabel" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoLabel">Solicita más <strong>información</strong></h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="content-form">
+              <form action="">
+                <div class="form-floating mb-3"> 
+                  <input class="form-control form-control-lg" placeholder="Nombre" type="text" name="nombre" maxlength="80" required="required"/>
+                  <label class="form-label" for="nombre">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Telefono" type="text" name="telefono" maxlength="10" required="required"/>
+                  <label class="form-label" for="telefono">Telefono</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Correo" type="email" name="correo" maxlength="50" required="required"/>
+                  <label class="form-label" for="correo">Correo  </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Nombre de la empresa" type="text" name="empresa" maxlength="50"/>
+                  <label class="form-label" for="empresa">Nombre de la empresa   </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control form-control-lg" placeholder="Mensaje" type="text" name="mensaje" maxlength="600" required="required"/>
+                  <label class="form-label" for="mensaje">Mensaje </label>
+                </div>
+              </form>
+            </div>
+            <div class="modal-body__buttons"> 
+              <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+              <button class="btn btn-success" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalInfoCompleta" aria-hidden="true" aria-labelledby="modalInfoCompleta" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalInfoCompleta">Solicitud de Información </h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Informacion enviada!</div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#modalInfoCompleta" data-bs-toggle="modal" data-bs-dismiss="modal">Cancelar </button>
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
